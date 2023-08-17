@@ -84,3 +84,7 @@ git merge bugfix
 git checkout dev_hock
 git add .\befehle.txt
 git restore --staged .\befehle.txt	<-- hatte noch Änderungen an der Datei vergessen, also aus dem Staging geholt und weiter bearbeitet.
+git add -A
+git commit -m "befehle.txt fertiggestellt"
+git checkout dev
+git merge dev_hock
