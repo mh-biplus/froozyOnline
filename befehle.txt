@@ -87,4 +87,3 @@ git restore --staged .\befehle.txt	<-- hatte noch Änderungen an der Datei verge
 git add -A
 git commit -m "befehle.txt fertiggestellt"
 git checkout dev
-git merge dev_hock
