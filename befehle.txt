@@ -87,3 +87,27 @@ git restore --staged .\befehle.txt	<-- hatte noch Änderungen an der Datei verge
 git add -A
 git commit -m "befehle.txt fertiggestellt"
 git checkout dev
+git merge dev_hock
+
+GitHub:
+öffentliches Repo: froozyOnline erstellt
+git remote set-url origin https://github.com/mh-biplus/froozyOnline.git			<-- um das clone origin Repo zu ersetzen
+git remote -v
+git branch -M main
+git push origin --all
+Message:
+-------
+Enumerating objects: 108, done.
+Counting objects: 100% (108/108), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (87/87), done.
+Writing objects: 100% (108/108), 1.27 MiB | 1.84 MiB/s, done.
+Total 108 (delta 32), reused 84 (delta 17), pack-reused 0
+remote: Resolving deltas: 100% (32/32), done.
+To https://github.com/mh-biplus/froozyOnline.git
+ * [new branch]      bugfix -> bugfix
+ * [new branch]      dev_hock -> dev_hock
+ * [new branch]      main -> main
+
+
+FERTIG
