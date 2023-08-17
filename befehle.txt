@@ -1,0 +1,65 @@
+1. Teil
+
+git clone -b dev https://github.com/mh-biplus/froozenyogurtshop.git froozywebsite
+git checkout -b dev_hock
+notepad.exe .\index.html   --> Speichern
+git add index.html
+git commit -m "index.html: Menü & Footer übersetzt"
+
+2. Teil
+git checkout dev
+git checkout -b bugfix
+notepad.exe .\css\style.css	--> Änderung speichern
+
+Mit Fehler:
+#body.home div.f0oter div ul li a {
+	/*background: url(../images/icons.png) no-repeat;*/
+	display: block;
+	height: 44px;
+	margin: 0 auto 22px;
+	padding: 0;
+	width: 80px;
+}
+
+behobene Fehler:
+#body.home div.footer div ul li a {
+	background: url(../images/icons.png) no-repeat;
+	display: block;
+	height: 44px;
+	margin: 0 auto 22px;
+	padding: 0;
+	width: 80px;
+}
+
+notepad.exe index.html		--> Änderungen speichern
+Mit Fehler:
+<li>
+	<a href="contuct.html">Contact</a>
+</li>
+
+Fehler behoben:
+<li>
+	<a href="contact.html">Contact</a>
+</li>
+
+
+notepad.exe product.hmlt	--> Änderungen speichern
+Mit Fehler:
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>product - Frozen Yogurt Shop</title>
+	<link rel="stylesheet" href="css/css/style.css" type="text/css">		<---- Fehler in dieser Zeile: doppelter /css/css/ folder, der Subfolder existiert aber nicht
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<script src="js/mobile.js" type="text/javascript"></script>
+</head>
+
+Fehler behoben:
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>product - Frozen Yogurt Shop</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<script src="js/mobile.js" type="text/javascript"></script>
+</head>
