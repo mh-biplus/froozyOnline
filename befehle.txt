@@ -1,0 +1,89 @@
+1. Teil
+
+git clone -b dev https://github.com/mh-biplus/froozenyogurtshop.git froozywebsite
+git checkout -b dev_hock
+notepad.exe .\index.html   --> Speichern
+git add index.html
+git commit -m "index.html: Menü & Footer übersetzt"
+
+2. Teil
+git checkout dev
+git checkout -b bugfix
+notepad.exe .\css\style.css	--> Änderung speichern
+
+Mit Fehler:
+#body.home div.f0oter div ul li a {
+	/*background: url(../images/icons.png) no-repeat;*/
+	display: block;
+	height: 44px;
+	margin: 0 auto 22px;
+	padding: 0;
+	width: 80px;
+}
+
+behobene Fehler:
+#body.home div.footer div ul li a {
+	background: url(../images/icons.png) no-repeat;
+	display: block;
+	height: 44px;
+	margin: 0 auto 22px;
+	padding: 0;
+	width: 80px;
+}
+
+notepad.exe index.html		--> Änderungen speichern
+Mit Fehler:
+<li>
+	<a href="contuct.html">Contact</a>
+</li>
+
+Fehler behoben:
+<li>
+	<a href="contact.html">Contact</a>
+</li>
+
+
+notepad.exe product.hmlt	--> Änderungen speichern
+Mit Fehler:
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>product - Frozen Yogurt Shop</title>
+	<link rel="stylesheet" href="css/css/style.css" type="text/css">		<---- Fehler in dieser Zeile: doppelter /css/css/ folder, der Subfolder existiert aber nicht
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<script src="js/mobile.js" type="text/javascript"></script>
+</head>
+
+Fehler behoben:
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>product - Frozen Yogurt Shop</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<script src="js/mobile.js" type="text/javascript"></script>
+</head>
+
+
+git add -A
+git status
+git commit -m "Fehler in Dateien css/style.css und product.html gefunden und behoben"
+git checkout dev
+git merge bugfix
+
+	bugfix merge Updating Message:
+		Updating 6f7808d..f7da2dd
+		Fast-forward
+ 		befehle.txt   | 65 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 		css/style.css |  4 ++--
+		product.html  |  2 +-
+ 		3 files changed, 68 insertions(+), 3 deletions(-)
+ 		create mode 100644 befehle.txt
+
+
+git checkout dev_hock
+git add .\befehle.txt
+git restore --staged .\befehle.txt	<-- hatte noch Änderungen an der Datei vergessen, also aus dem Staging geholt und weiter bearbeitet.
+git add -A
+git commit -m "befehle.txt fertiggestellt"
+git checkout dev
